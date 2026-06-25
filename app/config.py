@@ -15,6 +15,11 @@ class Settings(BaseSettings):
     
     SWAGGER_USERNAME: str
     SWAGGER_PASSWORD: str
+    ACCESS_TOKEN_EXPIRATION_MINUTES: int
+    
+    ALGORITHM: str
+    TYPE: str
+    SECRET_KEY: str
     
 def get_settings(env: str = "local") -> Settings:
     log.info(f"Loading settings for environment: {env}")
