@@ -3,6 +3,7 @@ from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from fastapi.openapi.docs import get_swagger_ui_html, get_redoc_html
 from fastapi.openapi.utils import get_openapi
 import secrets
+from app.api.login.router import login_router
 from app.config import settings, CONFIG_SETTINGS
 
 app = FastAPI(
@@ -49,5 +50,5 @@ def openapi(credentials: HTTPBasicCredentials = Depends(security)):
         )
     return get_openapi(title=settings.PROJECT_TITLE, version=settings.API_VERSION, description=settings.DESCRIPTION, routes=app.routes)
 
-
+app.include_router(login_router, prefix="/api/v1", tags=["Login"])
 
