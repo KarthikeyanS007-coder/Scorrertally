@@ -21,6 +21,12 @@ class Settings(BaseSettings):
     TYPE: str
     SECRET_KEY: str
     
+    MYSQL_HOST: str
+    MYSQL_PORT: int
+    MYSQL_USER: str
+    MYSQL_PASSWORD: str
+    MYSQL_DATABASE: str
+    
 def get_settings(env: str = "local") -> Settings:
     log.info(f"Loading settings for environment: {env}")
     return Settings.model_validate({})
