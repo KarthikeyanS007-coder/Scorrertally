@@ -1,5 +1,9 @@
 alembic
+argon2-cffi
+email-validator
 fastapi
+pwdlib
+python-multipart
 pydantic_settings
 python-jose
 PyMySQL
