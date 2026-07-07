@@ -111,7 +111,7 @@ async def run_migrations(credentials: HTTPBasicCredentials = Depends(security), 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error running migrations: {str(e)}")
 
-app.include_router(login_router, prefix="/api/v1", tags=["Login"])
+app.include_router(login_router, prefix="/FASTAPI", tags=["Login"])
 
 @app.get("/health/db")
 async def db_health():
